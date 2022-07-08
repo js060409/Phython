@@ -1,0 +1,29 @@
+import turtle
+t = turtle.Turtle()
+t.shape("turtle")
+ 
+x1 = turtle.textinput("큰 원의 중심좌표 x1: ")
+y1 = turtle.textinput("큰 원의 중심좌표 y1: ")
+r1 = turtle.textinput("큰 원의 반지름: ")
+x2 = turtle.textinput("작은 원의 중심좌표 x2: ")
+y2 = turtle.textinput("작은 원의 중심좌표 y2: ")
+r2 = turtle.textinput("작은 원의 반지름: ")
+ 
+length= (((x2-x1)**2 + (y2-y1)**2)**0.5)
+t.penup()
+t.goto (x1,y1-r1)
+t.pendown()
+t.circle(r1)
+t.penup()
+t.goto(x2,y2-r2)
+t.pendown()
+t.circle(r2)
+t.penup()
+t.goto(x1,x2)
+t.pendown()
+t.goto(x2,y2)
+length= (((x2-x1)**2 + (y2-y1)**2)**0.5)
+ 
+t.write("case 1:",length)  #두 원의 중심 사이의 거리
+t.write("case 2:",length-r1-r2) #두 원 사이의 최소 거리
+t.write("case 3:",length+r1+r2) #두 원 사이의 최대 거리
